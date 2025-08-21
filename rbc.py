@@ -17,7 +17,7 @@ def recuperar_caso(X_train, y_train, novo_caso): #aqui faz a recuperação do ca
     indice_proximo = np.argmin(distancias) #pega o indice menor -caso mais prox.
     return y_train[indice_proximo] #faz o retorno da classe
 
-def rbc_predict(X_train, y_train, X_test):  #predição para os casos de teste, onde para cada caso busca o mais parecido no treino
+def rbc_predict(X_train, y_train, X_test): #predição para os casos de teste, onde para cada caso busca o mais parecido no treino
     return [recuperar_caso(X_train, y_train, x) for x in X_test]
 
 y_pred = rbc_predict(X_train, y_train, X_test) #rodando o rbc
@@ -28,4 +28,3 @@ print(f"total de casos TREINO = {len(X_train)}")
 print(f"Total de casos TESTE = {len(X_test)}")
 print(f"Acurácia do rbc = {acuracia:.2f}")
 
-  
